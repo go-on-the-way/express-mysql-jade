@@ -1,0 +1,38 @@
+extends layout
+
+block content
+    input(id='add',type='button',value='增加')
+    input(id='edit',type='button',value='编辑')
+    input(id='delete',type='button',value='删除')
+    input(id='name',type='text')
+    input(id='search',type='button',value='查询')
+    input(id='save',type='button',value='保存')
+    #id
+        input(name='id',type='hidden')
+        label 姓名
+        input(name='name')
+        label 性别
+        input(name='sex')
+        label 年龄
+        input(name='age')
+    table
+        thead
+            tr
+            - list = ["checkbox","姓名", "年龄", "性别","出生日期"]
+            each item in list
+                - if (item == "checkbox")
+                    th
+                        input(type='checkbox')
+                - else
+                    th= item
+        tbody
+            each user in users
+                tr
+                    td
+                        input(type='checkbox' data-id='#{user.id}')
+                    td(class='name') #{user.name}
+                    td(class='age') #{user.age}
+                    td(class='sex') #{user.sex}
+                    td(class='birth') #{user.birth}
+    script(src='/javascripts/jquery-3.2.1.js')
+    script(src='/business/user.js')
