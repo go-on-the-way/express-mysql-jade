@@ -1,5 +1,5 @@
 # express-mysql-jade
-node,express+mysql+jade实现简单增删改查功能
+node+express+mysql+jade实现简单增删改查功能
 
 ## 步骤
 - [基于Express 应用生成器，生成项目express-mysql-jade](http://www.expressjs.com.cn/starter/generator.html)
